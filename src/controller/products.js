@@ -44,7 +44,8 @@ async function put (req, res){
 
 
 
-/* NESTE TRECHO DE CÓDIGO NÃO RETORNOU O ITEM ATUALIZADO AO POSTMAN, MAS RETORNOU AO COMPASS CORRETAMENTE 
+/* 
+NESTE TRECHO DE CÓDIGO NÃO RETORNOU O ITEM ATUALIZADO AO POSTMAN, MAS RETORNOU AO COMPASS CORRETAMENTE 
 async function put (req, res){
     const {id} = req.params
     const product = await ProductsModel.findOne({_id: id}) // pode ser também findByID
@@ -53,7 +54,18 @@ async function put (req, res){
         message: 'Sucess!',
         product,
     })
-} */
+}
+ */
+
+async function del(req, res){
+    const {id} = req.params
+    const delet = await ProductsModel.deleteOne({_id:id})
+    const message = del.ok? 'sucess!': 'error'
+    res.send({
+        message,
+    })
+
+}
 
 
 
@@ -63,5 +75,6 @@ module.exports = {
     get,
     post,
     put,
+    del,
 }
 
