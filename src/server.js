@@ -14,6 +14,7 @@ app.use(express.json())
 
 // definindo as rotas
 app.use('/api', routes)
+app.use('/', routes)
 
 // executando o servidor
 const port = process.env.PORT || 8080
