@@ -59,7 +59,7 @@ async function put (req, res){
 
 async function move(req, res){
     const {id} = req.params
-    const delet = await ProductsModel.deleteOne({_id:id})
+    const remove = await ProductsModel.deleteOne({_id:id})
     const message = del.ok? 'sucess!': 'error'
     res.send({
         message,
